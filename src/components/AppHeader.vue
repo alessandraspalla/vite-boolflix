@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <input type="text" placeholder="Cerca un film" v-model="store.userSearch">
+    <input type="text" placeholder="Cerca un film" v-model="store.userSearch" @keyup.enter="$emit('search')">
     <button @click="$emit('search')">Cerca</button>
 </template>
 
