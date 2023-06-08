@@ -2,6 +2,7 @@
 import { store } from './../store.js';
 export default {
     name: 'AppHeader',
+    emits: ['search'],
     data() {
         return {
             store

@@ -25,27 +25,6 @@ export default {
       axios.get(myURL)
         .then(res => {
           store.filmList = res.data.results;
-          store.langList = [];
-          store.flagList = [];
-          store.filmList.forEach(element => {
-            this.store.langList.push(element.original_language);
-          });
-
-          store.langList.forEach(element => {
-            if (element === 'it') {
-              store.flagList.push("/italian-flag.png")
-            } else if (element === 'en') {
-              store.flagList.push("/english-flag.png")
-            } else if (element === 'fr') {
-              store.flagList.push("/france-flag.png")
-            } else if (element === 'es') {
-              store.flagList.push("/esp-flag.png")
-            } else {
-              store.flagList.push(element)
-            }
-          })
-          console.log(store.flagList);
-
         })
         .catch(error => {
           console.log(error);
