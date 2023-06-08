@@ -3,7 +3,7 @@ import { store } from './../store.js';
 export default {
     name: 'AppFilm',
     props: {
-        details: Object
+        detFilm: Object
     },
     data() {
         return {
@@ -15,12 +15,12 @@ export default {
 
 <template>
     <div class="card">
-        <h2>{{ details.title }}</h2>
-        <h3>{{ details.original_title }}</h3>
-        <img v-if="store.flag.includes(details.original_language)" :src="`${details.original_language}.png`"
-            :alt="`${details.original_language}`">
-        <p v-else>{{ details.original_language }}</p>
-        <p>{{ details.vote_average }}</p>
+        <h2>{{ detFilm.title }}</h2>
+        <h3>{{ detFilm.original_title }}</h3>
+        <img v-if="store.flag.includes(detFilm.original_language)" :src="`${detFilm.original_language}.png`"
+            :alt="`${detFilm.original_language}`">
+        <p v-else>{{ detFilm.original_language }}</p>
+        <p>{{ detFilm.vote_average }}</p>
     </div>
 </template>
 

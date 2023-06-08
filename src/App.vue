@@ -15,16 +15,28 @@ export default {
     }
   },
   methods: {
-    getFilm() {
-      let myURL = store.apiURL;
+    getFilmAndSeries() {
+      let myMovieURL = store.apiMovieURL;
+      let mySeriesURL = store.apiSeriesURL;
+      store.filmList = [];
 
       if (store.userSearch !== '') {
-        myURL += `&${store.apiSearchParameter}=${store.userSearch}`
+        myMovieURL += `${store.apiKey}&${store.apiSearchParameter}=${store.userSearch}`
+        mySeriesURL += `${store.apiKey}&${store.apiSearchParameter}=${store.userSearch}`
       }
 
-      axios.get(myURL)
+      axios.get(myMovieURL)
         .then(res => {
-          store.filmList = res.data.results;
+          store.filmList.push(res.data.results);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+
+      axios.get(mySeriesURL)
+        .then(res => {
+          store.filmList.push(res.data.results);
+          console.log(store.filmList);
         })
         .catch(error => {
           console.log(error);
@@ -35,7 +47,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @search="getFilm" />
+  <AppHeader @search="getFilmAndSeries" />
   <main>
     <ListFilm />
   </main>
