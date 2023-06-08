@@ -15,6 +15,7 @@ export default {
 
 <template>
     <div class="card">
+        <img :src="`${store.apiImageHttp}${detFilm.poster_path}`" alt="">
         <h2>{{ detFilm.title }}</h2>
         <h3>{{ detFilm.original_title }}</h3>
         <img v-if="store.flag.includes(detFilm.original_language)" :src="`${detFilm.original_language}.png`"
