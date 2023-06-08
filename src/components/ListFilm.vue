@@ -1,12 +1,11 @@
 <script>
 import { store } from './../store.js';
-import AppFilm from './AppFilm.vue'
-import AppSerie from './AppSerie.vue'
+import AppCard from './AppCard.vue'
+
 export default {
     name: 'ListFilm',
     components: {
-        AppFilm,
-        AppSerie
+        AppCard
     },
     data() {
         return {
@@ -18,9 +17,9 @@ export default {
 
 <template>
     <h2>FILM</h2>
-    <AppFilm v-for="film in store.filmList[0]" :detFilm="film" :key="film.id" />
+    <AppCard v-for="film in store.filmList[0]" :details="film" :key="film.id" />
     <h2>SERIE</h2>
-    <AppSerie v-for="series in store.filmList[1]" :detSeries="series" :key="series.id" />
+    <AppCard v-for="serie in store.filmList[1]" :details="serie" :key="serie.id" />
 </template>
 
 <style lang="scss" scoped></style>
