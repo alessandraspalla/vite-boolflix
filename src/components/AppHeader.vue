@@ -30,6 +30,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     #logo {
         font-size: 1.8rem;

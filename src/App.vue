@@ -62,5 +62,6 @@ main {
   overflow: auto;
   background-color: $grey;
   padding-top: 30px;
+  margin-top: 50px;
 }
 </style>
