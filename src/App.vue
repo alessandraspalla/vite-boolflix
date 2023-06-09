@@ -58,6 +58,8 @@ export default {
 @use './styles/partials/variables.scss' as *;
 
 main {
+  height: calc(100vh - 50px);
+  overflow: auto;
   background-color: $grey;
   padding-top: 30px;
 }

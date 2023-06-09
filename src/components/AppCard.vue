@@ -24,7 +24,8 @@ export default {
         <div class="card">
             <!-- movie/serie cover -->
             <div class="image">
-                <img :src="`${store.apiImageHttp}${details.poster_path}`" alt="">
+                <img v-if="details.poster_path !== null" :src="`${store.apiImageHttp}${details.poster_path}`" alt="">
+                <img v-else src="/movie.jpg" alt="">
             </div>
 
             <div class="text">
