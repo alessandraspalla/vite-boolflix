@@ -21,17 +21,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use './../styles/partials/variables.scss' as *;
+
 header {
     padding-inline: 20px;
     height: 50px;
-    background-color: #000;
+    background-color: $black;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     #logo {
         font-size: 1.8rem;
-        color: red;
+        color: $logo-color;
     }
 
     input {

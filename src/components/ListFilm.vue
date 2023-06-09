@@ -16,11 +16,9 @@ export default {
 </script>
 
 <template>
-    <h2>FILM</h2>
     <div class="container">
         <AppCard v-for="film in store.filmList[0]" :details="film" :key="film.id" />
     </div>
-    <h2>SERIE</h2>
     <div class="container">
         <AppCard v-for="serie in store.filmList[1]" :details="serie" :key="serie.id" />
     </div>
@@ -29,7 +27,6 @@ export default {
 <style lang="scss" scoped>
 .container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 </style>
